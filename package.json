@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "dotenv": "^16.1.4"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
+  },
+  "name": "vue3-vite-express-js-boilerplate",
+  "description": "Vue3 with Vite built using express and other various technologies for a quick boilerplate development stack",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willCode2Surf/vue3-vite-express-js-boilerplate.git"
+  },
+  "keywords": [
+    "docker",
+    "vue",
+    "vue3",
+    "express",
+    "javascript",
+    "boilerplate"
+  ],
+  "author": "WillCode2Surf (dustin.w.brown@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willCode2Surf/vue3-vite-express-js-boilerplate/issues"
+  },
+  "homepage": "https://github.com/willCode2Surf/vue3-vite-express-js-boilerplate#readme"
+}
