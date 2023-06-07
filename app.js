@@ -29,7 +29,7 @@ const main = async () => {
   app.use("/routes", routes);
 
   var server = http.createServer(app);
-  server.listen(ConfigurationData.server.port);
+  server.listen(3000);
   server.on("upgrade", (request, socket, head) => {
     wsServer.handleUpgrade(request, socket, head, (socket) => {
       wsServer.emit("connection", socket, request);
