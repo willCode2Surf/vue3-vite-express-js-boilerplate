@@ -2,6 +2,9 @@
 .env
 .env*
 
+# dist
+dist
+
 # Logs
 logs
 *.log

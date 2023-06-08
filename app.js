@@ -10,13 +10,13 @@ const wsServer = new WebSocketServer({
   noServer: true,
 });
 
-
 const main = async () => {
- 
   wsServer.on("connection", (socket) => {
-    socket.on("message", (message) =>
-      console.log("socket.on(message)", message)
-    );
+    socket.on("message", (message) => {
+      console.log("SERVER RECEIVED: socket.on(message)", JSON.parse(message));
+      // echo the user
+      socket.send(JSON.stringify({ message: "hello client" }));
+    });
   });
 
   app.use(bodyParser.json());
@@ -29,7 +29,7 @@ const main = async () => {
   app.use("/routes", routes);
 
   var server = http.createServer(app);
-  server.listen(3000);
+  server.listen(ConfigurationData.server.port);
   server.on("upgrade", (request, socket, head) => {
     wsServer.handleUpgrade(request, socket, head, (socket) => {
       wsServer.emit("connection", socket, request);
@@ -38,7 +38,6 @@ const main = async () => {
 
   console.info(`Server started on port ${ConfigurationData.server.port}`);
   console.info(`http://127.0.0.1:${ConfigurationData.server.port}`);
-  
 };
 
 main().catch(console.error);

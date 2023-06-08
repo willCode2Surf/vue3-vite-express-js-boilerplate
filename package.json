@@ -9,7 +9,7 @@
     "dev": "vite --mode development",
     "build": "vite build --mode development",
     "preview": "vite preview",
-    "start": "node app",
+    "start": "vite build --mode development && node app",
     "prepare": "husky install"
   },
   "lint-staged": {
