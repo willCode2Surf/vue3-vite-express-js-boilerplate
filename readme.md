@@ -22,6 +22,24 @@ Once the project has been cloned, and the dependencies have been installed we ca
 npm run start
 ```
 
+If you want to use Docker it is just as easy. There is a known issue with using Husky and Docker. Since Husky and Prettier are geared for developer experience we can remove it for when we need to build the docker image. Just remove this section from the package.json file (inside the scripts portion).
+
+```javascript
+"prepare": "husky install"
+```
+
+Once that has been removed from the package.json file we can build the Docker image.
+
+```bash
+docker build -t boilerplate:dev .
+```
+
+once it is completed we can run the container image by executing the following docker command:
+
+```bash
+docker run -d -p 6909:6909 boilerplate:dev
+```
+
 This will build the distro content and run the server. The configuration details, including port number, can be modified in the /config folder.
 
 ### What it do
