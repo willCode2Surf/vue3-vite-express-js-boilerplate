@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/status", function (req, res) {
   let responseObject = {};
   responseObject.status = "OK";
-  resonseObject.statusCode = 200;
+  responseObject.statusCode = 200;
   res.json(responseObject);
 });
 
